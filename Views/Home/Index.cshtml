@@ -1,0 +1,76 @@
+﻿@model List<FlightList>
+@{
+    ViewData["Title"] = "Flight Management";
+}
+
+<div class="container mt-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold">✈️ Flight Management</h2>
+
+        <a asp-controller="FlightList" asp-action="Add"
+           class="btn btn-success btn-lg shadow-sm">
+            + Add New Flight
+        </a>
+    </div>
+
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body p-4">
+
+            <table class="table table-hover align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Flight Number</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Date</th>
+                        <th>Price</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @if (Model.Any())
+                    {
+                        @foreach (var flight in Model)
+                        {
+                            <tr>
+                                <td class="fw-bold">@flight.FlightNumber</td>
+                                <td>@flight.From</td>
+                                <td>@flight.To</td>
+                                <td>@flight.Date</td>
+                                <td>$@flight.Price</td>
+
+                                <td class="text-center">
+                                    <a asp-controller="FlightList"
+                                       asp-action="Edit"
+                                       asp-route-id="@flight.FlightListId"
+                                       class="btn btn-outline-primary btn-sm me-2">
+                                        Edit
+                                    </a>
+
+                                    <a asp-controller="FlightList"
+                                       asp-action="Delete"
+                                       asp-route-id="@flight.FlightListId"
+                                       class="btn btn-outline-danger btn-sm">
+                                        Delete
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="6" class="text-center text-muted">
+                                No flights available.
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+</div>

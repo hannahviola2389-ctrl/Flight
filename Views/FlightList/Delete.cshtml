@@ -1,0 +1,59 @@
+﻿@model FlightList
+@{
+    ViewData["Title"] = "Delete Flight";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+
+            <div class="card shadow-lg border-0 rounded-4">
+
+                <div class="card-header bg-danger text-white text-center rounded-top-4">
+                    <h3 class="mb-0">Confirm Flight Deletion</h3>
+                </div>
+
+                <div class="card-body text-center p-5">
+
+                    <div class="mb-4">
+                        <h4 class="fw-bold text-danger">
+                            @Model.FlightNumber
+                        </h4>
+                        <p class="fs-5">
+                            Departure Date: <strong>@Model.Date</strong>
+                        </p>
+                        <p class="text-muted">
+                            From <strong>@Model.From</strong>
+                            to <strong>@Model.To</strong>
+                        </p>
+                    </div>
+
+                    <div class="alert alert-warning">
+                        ⚠️ This action cannot be undone.
+                    </div>
+
+                    <form asp-action="Delete" method="post">
+                        <input type="hidden" asp-for="FlightListId" />
+
+                        <div class="d-flex justify-content-center gap-3 mt-4">
+
+                            <a asp-controller="Home" asp-action="Index"
+                               class="btn btn-outline-secondary btn-lg px-4">
+                                Cancel
+                            </a>
+
+                            <button type="submit"
+                                    class="btn btn-danger btn-lg px-5">
+                                Delete Flight
+                            </button>
+
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

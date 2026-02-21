@@ -1,0 +1,76 @@
+﻿@model FlightList
+@{
+    string title = ViewBag.Action + " Flight";
+    ViewData["Title"] = title;
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-header bg-dark text-white text-center rounded-top-4">
+                    <h3 class="mb-0">@ViewBag.Title</h3>
+                </div>
+
+                <div class="card-body p-4">
+
+                    <form asp-action="Edit" method="post">
+                        <div asp-validation-summary="All" class="alert alert-danger"></div>
+
+                        <div class="mb-4">
+                            <label asp-for="FlightNumber" class="form-label fw-bold"></label>
+                            <input asp-for="FlightNumber" class="form-control form-control-lg shadow-sm"
+                                   readonly="@(ViewData["IsEdit"] != null)" />
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="From" class="form-label fw-bold"></label>
+                            <select asp-for="From" class="form-select form-select-lg shadow-sm"
+                                    asp-items="@(new SelectList(ViewBag.Cities))">
+                                <option value="">-- Select Departure City --</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="To" class="form-label fw-bold"></label>
+                            <select asp-for="To" class="form-select form-select-lg shadow-sm"
+                                    asp-items="@(new SelectList(ViewBag.Cities))">
+                                <option value="">-- Select Destination City --</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="Date" class="form-label fw-bold"></label>
+                            <input asp-for="Date" type="date" class="form-control form-control-lg shadow-sm" />
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="Price" class="form-label fw-bold"></label>
+                            <div class="input-group input-group-lg shadow-sm">
+                                <span class="input-group-text">$</span>
+                                <input asp-for="Price" type="number" class="form-control" />
+                            </div>
+                        </div>
+
+                        <input type="hidden" asp-for="FlightListId" />
+
+                        <div class="d-flex justify-content-between mt-4">
+                            <a asp-controller="Home" asp-action="Index"
+                               class="btn btn-outline-secondary btn-lg px-4">
+                                Cancel
+                            </a>
+
+                            <button type="submit" class="btn btn-success btn-lg px-5">
+                                Save Flight
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
