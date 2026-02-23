@@ -13,15 +13,6 @@ namespace Flight.Controllers
         public IActionResult Add()
         {
             ViewBag.Action = "Add";
-            ViewBag.Cities = new List<string>
-            {
-                "New York",
-                "Dallas",
-                "Chicago",
-                "Los Angeles",
-                "Houston",
-                "Miami"
-            };
             return View("Edit", new FlightList());
         }
 
@@ -30,15 +21,6 @@ namespace Flight.Controllers
         {
             ViewBag.Action = "Edit";
             ViewData["IsEdit"] = true;
-            ViewBag.Cities = new List<string>
-            {
-                "New York",
-                "Dallas",
-                "Chicago",
-                "Los Angeles",
-                "Houston",
-                "Miami"
-            };
             var flightId = context.FlightList.Find(id);
             return View(flightId);
         }

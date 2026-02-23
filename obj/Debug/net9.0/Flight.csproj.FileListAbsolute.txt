@@ -341,7 +341,6 @@ C:\Users\yache\OneDrive\Attachments\Desktop\Juo_J\SPRING_2026\Hannah\Flight\Flig
 C:\Users\yache\OneDrive\Attachments\Desktop\Juo_J\SPRING_2026\Hannah\Flight\Flight\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.Flight.props
 C:\Users\yache\OneDrive\Attachments\Desktop\Juo_J\SPRING_2026\Hannah\Flight\Flight\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.Flight.props
 C:\Users\yache\OneDrive\Attachments\Desktop\Juo_J\SPRING_2026\Hannah\Flight\Flight\obj\Debug\net9.0\staticwebassets.pack.json
-C:\Users\yache\OneDrive\Attachments\Desktop\Juo_J\SPRING_2026\Hannah\Flight\Flight\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\yache\OneDrive\Attachments\Desktop\Juo_J\SPRING_2026\Hannah\Flight\Flight\obj\Debug\net9.0\Flight.csproj.Up2Date
 C:\Users\yache\OneDrive\Attachments\Desktop\Juo_J\SPRING_2026\Hannah\Flight\Flight\obj\Debug\net9.0\Flight.dll
 C:\Users\yache\OneDrive\Attachments\Desktop\Juo_J\SPRING_2026\Hannah\Flight\Flight\obj\Debug\net9.0\refint\Flight.dll

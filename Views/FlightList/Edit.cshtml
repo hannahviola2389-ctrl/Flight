@@ -26,17 +26,27 @@
 
                         <div class="mb-4">
                             <label asp-for="From" class="form-label fw-bold"></label>
-                            <select asp-for="From" class="form-select form-select-lg shadow-sm"
-                                    asp-items="@(new SelectList(ViewBag.Cities))">
+                            <select asp-for="From" class="form-select form-select-lg shadow-sm">
                                 <option value="">-- Select Departure City --</option>
+                                <option value="New York">New York</option>
+                                <option value="Dallas">Dallas</option>
+                                <option value="Chicago">Chicago</option>
+                                <option value="Los Angeles">Los Angeles</option>
+                                <option value="Houston">Houston</option>
+                                <option value="Miami">Miami</option>
                             </select>
                         </div>
 
                         <div class="mb-4">
                             <label asp-for="To" class="form-label fw-bold"></label>
-                            <select asp-for="To" class="form-select form-select-lg shadow-sm"
-                                    asp-items="@(new SelectList(ViewBag.Cities))">
+                            <select asp-for="To" class="form-select form-select-lg shadow-sm">
                                 <option value="">-- Select Destination City --</option>
+                                <option value="New York">New York</option>
+                                <option value="Dallas">Dallas</option>
+                                <option value="Chicago">Chicago</option>
+                                <option value="Los Angeles">Los Angeles</option>
+                                <option value="Houston">Houston</option>
+                                <option value="Miami">Miami</option>
                             </select>
                         </div>
 
